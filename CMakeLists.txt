@@ -16,6 +16,8 @@ add_library(${TARGET_NAME}
 #Add an alias so that library can be used inside the build tree, e.g. when testing
 add_library(TestLib::${TARGET_NAME} ALIAS ${TARGET_NAME})
 
+find_package(TestLib COMPONENTS Base)
+
 #Set target properties
 target_include_directories(${TARGET_NAME}
     PUBLIC

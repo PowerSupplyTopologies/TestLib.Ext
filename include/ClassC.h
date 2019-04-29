@@ -1,6 +1,8 @@
 #ifndef TESTLIB_EXT_CLASSC_H_
 #define TESTLIB_EXT_CLASSC_H_
 
+#include "ClassA.h"
+
 namespace TestLib
 {
     namespace Ext
