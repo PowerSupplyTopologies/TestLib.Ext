@@ -1,5 +1,5 @@
-cmake_minimum_required(VERSION 3.5)
-project(libtestlibext VERSION 1.0.0 LANGUAGES CXX)
+cmake_minimum_required(VERSION 3.8)
+project(TestLibExt VERSION 1.0.0 LANGUAGES CXX)
 
 #Make sure that custom modules like FindRapidJSON are found
 list(INSERT CMAKE_MODULE_PATH 0 ${CMAKE_SOURCE_DIR}/cmake)
@@ -16,7 +16,8 @@ add_library(${TARGET_NAME}
 #Add an alias so that library can be used inside the build tree, e.g. when testing
 add_library(TestLib::${TARGET_NAME} ALIAS ${TARGET_NAME})
 
-find_package(TestLib COMPONENTS Base)
+include(CMakeFindDependencyMacro)
+find_dependency(TestLib COMPONENTS Base)
 
 #Set target properties
 target_include_directories(${TARGET_NAME}
