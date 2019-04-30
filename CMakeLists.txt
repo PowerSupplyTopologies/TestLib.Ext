@@ -16,8 +16,8 @@ add_library(${TARGET_NAME}
 #Add an alias so that library can be used inside the build tree, e.g. when testing
 add_library(TestLib::${TARGET_NAME} ALIAS ${TARGET_NAME})
 
-include(CMakeFindDependencyMacro)
-find_dependency(TestLib COMPONENTS Base)
+#include(CMakeFindDependencyMacro)
+#find_dependency(TestLib COMPONENTS Base)
 
 #Set target properties
 target_include_directories(${TARGET_NAME}
@@ -26,6 +26,7 @@ target_include_directories(${TARGET_NAME}
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/src
+        ${TestLibBase_SOURCE_DIR}/include
 )
 
 target_compile_features(${TARGET_NAME} PRIVATE cxx_auto_type)

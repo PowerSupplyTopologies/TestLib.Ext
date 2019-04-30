@@ -14,7 +14,7 @@ namespace TestLib
 
         }
 
-        void ClassC::meth1()
+        void ClassC::meth3()
         {
 
         }
