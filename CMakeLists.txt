@@ -10,7 +10,7 @@ list(INSERT CMAKE_MODULE_PATH 0 ${CMAKE_SOURCE_DIR}/cmake)
 set(TARGET_NAME testlibext)
 
 add_library(${TARGET_NAME}
-    src/ClassC.cpp
+    src/Ext/ClassC.cpp
 )
 
 #Add an alias so that library can be used inside the build tree, e.g. when testing
@@ -53,7 +53,7 @@ install(TARGETS ${TARGET_NAME}
 
 set_target_properties(${TARGET_NAME} PROPERTIES EXPORT_NAME Ext)
 
-install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/TestLib)
 
 #Export the targets to a script
 install(EXPORT ${TARGET_NAME}-targets

@@ -1,7 +1,7 @@
 #ifndef TESTLIB_EXT_CLASSC_H_
 #define TESTLIB_EXT_CLASSC_H_
 
-#include "ClassA.h"
+#include <TestLib/Base/ClassA.h>
 
 namespace TestLib
 {
